@@ -1,12 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManager.Data;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Add services to the container.
+
+
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=tasks.db"));
+    options.UseMySql(
+        "server=localhost;database=taskmanager;user=root;password=backend130",
+        new MySqlServerVersion(new Version(8, 0, 36))
+    )
+);
 
 var app = builder.Build();
 
