@@ -89,7 +89,7 @@ TaskManager/
 # Passos:
 
 ```bash
-git clone https://github.com/LucasYamazaki/TaskManager.git
+git clone https://github.com/LucasYamazaki/taskmanager-mysql.git
 cd TaskManager
 dotnet restore
 dotnet ef database update
